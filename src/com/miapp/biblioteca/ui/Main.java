@@ -37,8 +37,7 @@ public class Main {
             System.out.println("11. Listar Usuarios");
             System.out.println("12. Actualizar Usuario");
             System.out.println("13. Salir");
-            System.out.println("=================================");
-            System.out.println(" ");
+            System.out.println("=================================")
             System.out.println("Por favor ingrese una opción: ");
             System.out.println(" ");
             opcion = scanner.nextInt();
@@ -56,6 +55,8 @@ public class Main {
                 String genero = scanner.next();
                 
                 libroService.crearLibro(titulo,autor,isbn,genero);
+                Libro libronuevo = libroService.buscarLibroPorISBN(isbn);
+                libronuevo.setDisponible(true);
                 break;
             
             case 2:
